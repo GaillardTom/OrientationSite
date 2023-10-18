@@ -6,15 +6,20 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "mongodb"
     url      = env("DATABASE_URL")
+    relationMode = "prisma"
 }
 
 model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  title  String
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id])
+}
 
-    @@index([name])
+model User {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  email String
+  posts Post[]
 }
