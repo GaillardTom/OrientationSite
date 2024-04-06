@@ -9,7 +9,7 @@ import { courseRouter } from "./routers/course";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
-  course: courseRouter
+  course: courseRouter,
 });
 
 // export type definition of API
