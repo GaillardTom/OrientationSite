@@ -1,5 +1,6 @@
-import mermaid from 'mermaid';
+import mermaid, { UnknownDiagramError } from 'mermaid';
 import React, {Component, createRef} from 'react'; 
+import { unknown } from 'zod';
 
 
 
@@ -13,24 +14,37 @@ class Mermaid extends React.Component<MermaidProps> {
     private mermaidRef = createRef<HTMLDivElement>();
 
     componentDidMount() {
-        this.renderMermaid();
+        void this.renderMermaid();
     }
 
     componentDidUpdate(prevProps: MermaidProps, prevState: unknown){
         if (prevProps.code !== this.props.code) {
             document?.getElementById('mermaid-chart')?.removeAttribute('data-processed');
-            this.renderMermaid();
+            void this.renderMermaid();
         }
         
     }
-    renderMermaid() {
+    async renderMermaid() {
         const { code } = this.props;   
+        if( code === undefined) { 
+                
+        }
         if (this.mermaidRef.current) {
+            console.log(code)
             try{ 
-                void mermaid.parse(code);
-                this.mermaidRef.current.innerHTML = code;
-                void mermaid.initialize({startOnLoad: true});
-                void mermaid.run();
+                if(code === undefined) {
+                    void mermaid.parse("")
+                    this.mermaidRef.current.innerHTML = "";
+                    void mermaid.initialize({startOnLoad: true});
+                    void await mermaid.run(); 
+                }
+                else{ 
+                    void mermaid.parse(code);
+                    this.mermaidRef.current.innerHTML = code;
+                    void mermaid.initialize({startOnLoad: true});
+                    void await mermaid.run();
+                }
+                
             
             } 
             catch (e) {

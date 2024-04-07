@@ -19,10 +19,10 @@ model Post {
 }
 
 model Course {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  id    String @id @default(auto()) @map("_id") @db.ObjectId 
   name String @db.String
   requiredCourse String? @db.ObjectId
-  futurePrograms String? @db.ObjectId
+  futurePrograms String[] @db.ObjectId
   grade String @db.String
   mathSN4 Boolean 
   mathSN5 Boolean 
