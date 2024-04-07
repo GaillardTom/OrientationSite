@@ -32,7 +32,7 @@ export default function Home() {
 			</Head>
 			<div className="absolute top-0 left-0 m-4 flex flex-col items-start">
  
-			<button className="bg-gray-200 p-2 mr-4 hover:animate-spin" onClick={() => setIsOpen(!isOpen)}>
+			<button className="bg-gray-200 p-2 mr-4 hover:animate-spin" onClick={() => setIsOpen(!isOpen || false)}>
             <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z"/>
             </svg>
@@ -40,14 +40,14 @@ export default function Home() {
         {isOpen && (
 			<header className={`mt-4 bg-gray-300 rounded-md shadow-md shadow-white p-10 flex flex-col gap-6 fade-in  justify-around transition delay-500 ease-in-out duration-500 ${isOpen ? 'show' : ''}`}>
 				
-				<Link href="/">
-                <Button  variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Home</Button>
+				<Link href="/" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">  Home
+                {/* <Button  variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Home</Button> */}
 				</Link>
-				<Link href="/courses">
-				<Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Courses</Button>
+				<Link href="/courses" className="text-slate-900 font-bold font-mono text-lg hover:scale-125"> Courses
+				{/* <Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Courses</Button> */}
 				</Link>
-				<Link href="/about">
-				<Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">About</Button>
+				<Link href="/about" className="text-slate-900 font-bold font-mono text-lg hover:scale-125"> About
+				{/* <Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">About</Button> */}
 				</Link>
             </header>
         )}

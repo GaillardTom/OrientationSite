@@ -3,4 +3,4 @@
 
 Built with: 
 
-    TS; Trpc; MongoDB; Prisma;
+    TS; Trpc; MongoDB; Prisma; next; Tailwindcss;
