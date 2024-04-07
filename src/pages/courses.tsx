@@ -26,14 +26,14 @@ export default function Course() {
         {isOpen && (
 			<header className={`mt-4 bg-gray-300 rounded-md shadow-md shadow-white p-10 flex flex-col gap-6 fade-in  justify-around transition delay-500 ease-in-out duration-500 ${isOpen ? 'show' : ''}`}>
 				
-                <Link href="/">
-                <Button  variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Home</Button>
+                <Link href="/" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">  Home
+                {/* <Button  variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Home</Button> */}
 				</Link>
-				<Link href="/courses">
-				<Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Courses</Button>
+				<Link href="/courses" className="text-slate-900 font-bold font-mono text-lg hover:scale-125"> Courses
+				{/* <Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Courses</Button> */}
 				</Link>
-				<Link href="/about">
-				<Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">About</Button>
+				<Link href="/about" className="text-slate-900 font-bold font-mono text-lg hover:scale-125"> About
+				{/* <Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">About</Button> */}
 				</Link>
             </header>
         )}
