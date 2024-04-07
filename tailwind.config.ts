@@ -10,5 +10,13 @@ export default {
       },
     },
   },
+  variants: {
+    extend: {
+      opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      transitionOpacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      duration: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+      transitionDelay: ['hover, focus']
+    },
+  },
   plugins: [],
 } satisfies Config;

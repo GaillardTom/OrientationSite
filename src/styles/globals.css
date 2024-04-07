@@ -5,3 +5,37 @@
 body{ 
     @apply bg-gray-800 text-gray-300;
 }
+
+
+.test{ 
+    @apply bg-gray-500 text-gray-900;
+    color: red;
+}
+.fade-in {
+    /* opacity: 0; */
+    /* transition: opacity 0.5s ease-in-out; */
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    animation : fadeOut 0.5s forwards;
+}
+
+.fade-in.show {
+    animation: fadeIn 0.5s forwards;
+    /* opacity: 1; */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    100% {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+    }
+}
