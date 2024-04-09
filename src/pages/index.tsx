@@ -6,8 +6,6 @@ import {useState, useEffect } from 'react';
 import { Button } from "@material-tailwind/react";
 import { init } from "next/dist/compiled/webpack/webpack";
 import { doc } from "prettier";
-
-
 export default function Home() {
 	const { data, isLoading } = api.jobs.getAll.useQuery();
 	const [mermaidGraph, setMermaidGraph] = useState<string>("");
