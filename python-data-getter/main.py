@@ -5,10 +5,14 @@ import pandas as pd
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
+
+
+#load the environment variables
+load_dotenv()
 # Importing the data from samples.xlsx
 data = pd.read_excel('sample.xlsx')
 rl = pd.read_excel("sampleCategory.xlsx")# print(data['Title'])
-load_dotenv()    
+    
 # Assume 'JobTitle' is the column for job titles and 'Ranking' is the column for ranking
 finalDict = {}
 data_sorted = data.sort_values('Data Value', ascending=False)
@@ -50,7 +54,7 @@ for i in range(len(rl['Scale ID'])):
 
 
 # Establish a connection to MongoDB
-client = MongoClient(os.getenv("DB_URL"))  # replace with your connection string if not local
+client = MongoClient(os.getenv("URL_DB"))  # replace with your connection string if not local
 
 # Specify the database and collection
 db = client['Dicord-CompanionDB']  # replace 'your_database' with your database name
