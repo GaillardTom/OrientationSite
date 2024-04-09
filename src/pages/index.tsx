@@ -223,10 +223,10 @@ export default function Home() {
 			<main className="flex h-screen ">
        
 				<div className="bg-gray-200 md:p-10 lg:p-20 w-full flex flex-col  justify-center items-center h-screen   gap-10 ">
-					<div className="relative flex justify-between w-5/6 items-center">
+					<div className="relative flex justify-between w-full items-center ">
 
 					<h1 className="text-nowrap text-3xl text-slate-900 font-extrabold font-mono">Jobs Requirements</h1>
-        			<div className="relative">
+        			<div className="relative mr-20">
     <input id="search-bar" type="text" className="text-slate-900 border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none focus:ring focus:border-blue-500" placeholder="Search jobs..." onChange={e => setSearchTerm(e.target.value)}/>
     <button type="submit" className="absolute right-0 top-0 mt-2 mr-4">
         <svg className="hover:animate-bounce text-gray-600 h-4 w-4 fill-current mt-1 items-center flex align-center content-center" xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" width="512px" height="512px">

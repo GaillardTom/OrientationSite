@@ -45,7 +45,7 @@ export default function Course() {
 
     <div className="bg-gray-200 md:p-10 lg:p-20 rounded-lg shadow-lg w-full flex flex-col justify-center">
 
-        <h1 className="courses-title align-top text-slate-900 font-bold text-3xl font-mono p-10">Available Jobs</h1>
+        <h1 className="courses-title align-top text-slate-900 font-bold text-3xl font-mono mb-3">Available Jobs</h1>
         <input
         type="text"
         value={searchTerm}
