@@ -29,3 +29,12 @@ model Course {
   chimiePhysique Boolean 
 
 }
+model Jobs { 
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  Title String @db.String
+  Category Int @db.Int
+  Education String @db.String
+
+
+}
+

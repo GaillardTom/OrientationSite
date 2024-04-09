@@ -80,7 +80,7 @@ class Mermaid extends React.Component<MermaidProps> {
 
     render() {
         return ( 
-            <div className="mermaid-container" onWheel={this.handleZoom} >
+            <div className="mermaid-container h-full w-full flex font-semibold font-mono items-center align-middle justify-center content-center" onWheel={this.handleZoom} >
             <div id="mermaid-chart" className='mermaid' ref={this.mermaidRef}>
                 {this.props.code}
             </div>
