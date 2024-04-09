@@ -3,6 +3,12 @@ import sys
 import numpy as np 
 import pandas as pd 
 from pymongo import MongoClient
+from dotenv import load_dotenv
+
+
+
+#load the environment variables
+load_dotenv()
 # Importing the data from samples.xlsx
 data = pd.read_excel('sample.xlsx')
 rl = pd.read_excel("sampleCategory.xlsx")# print(data['Title'])
@@ -48,7 +54,7 @@ for i in range(len(rl['Scale ID'])):
 
 
 # Establish a connection to MongoDB
-client = MongoClient('mongodb+srv://admin:9OOomCxa0HoFBzCH@discord-companion.vloqg6g.mongodb.net/')  # replace with your connection string if not local
+client = MongoClient(os.getenv("URL_DB"))  # replace with your connection string if not local
 
 # Specify the database and collection
 db = client['Dicord-CompanionDB']  # replace 'your_database' with your database name
