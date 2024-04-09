@@ -174,10 +174,9 @@ export default function Home() {
 		<>
 			<Head>
 				<title>Orientation Site</title>
-				<h1>Orientation Site</h1>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="absolute top-0 left-0 m-4 flex flex-col items-start">
+			<div className="fixed z-10 top-0 left-0 m-4 flex flex-col items-start">
  
 			<button className="bg-gray-200 p-2 mr-4 hover:animate-spin "  onClick={() => setIsOpen(!isOpen || false)}>
             <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -190,7 +189,7 @@ export default function Home() {
 				<Link href="/" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce">  Home
                 {/* <Button  variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Home</Button> */}
 				</Link>
-				<Link href="/courses" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce"> Courses
+				<Link href="/courses" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce"> Jobs
 				{/* <Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Courses</Button> */}
 				</Link>
 				<Link href="/about" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce"> About
@@ -204,7 +203,7 @@ export default function Home() {
 				<div className="bg-gray-200 md:p-10 lg:p-20 w-full flex flex-col  justify-center items-center h-screen   gap-10 ">
 					<div className="relative flex justify-between w-5/6 items-center">
 
-					<h1 className="text-nowrap text-3xl text-slate-900 font-extrabold font-mono">Available Jobs</h1>
+					<h1 className="text-nowrap text-3xl text-slate-900 font-extrabold font-mono">Jobs Requirements</h1>
         			<div className="relative">
     <input id="search-bar" type="text" className="text-slate-900 border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none focus:ring focus:border-blue-500" placeholder="Search jobs..." onChange={e => setSearchTerm(e.target.value)}/>
     <button type="submit" className="absolute right-0 top-0 mt-2 mr-4">
@@ -213,7 +212,7 @@ export default function Home() {
         </svg>
     </button>
     {results.length > 0 && (
-        <div className="absolute bg-white rounded-lg w-full border border-gray-300 mt-1 max-h-60 overflow-auto">
+        <div className="absolute bg-white rounded-lg w-full border border-gray-300 mt-1 max-h-60 overflow-auto z-10">
             <ul className="rounded-lg grid grid-cols-1 border-solid">
                 {results.map((result, index) => (
                     <button className="text-slate-800 hover:bg-blue-100 mt-1 border-solid rounded-md font-semibold font-mono" onClick={ () => ChangeJob(result)} key={index}>{result.Title}</button>

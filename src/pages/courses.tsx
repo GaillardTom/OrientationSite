@@ -17,7 +17,7 @@ export default function Course() {
 				<title>Orientation Site</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="absolute top-0 left-0 m-4 flex flex-col items-start">
+			<div className="fixed z-10 top-0 left-0 m-4 flex flex-col items-start">
 			<button className="bg-gray-200 p-2 mr-4 hover:animate-spin" onClick={() => setIsOpen(!isOpen)}>
             <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v15z"/>
@@ -29,7 +29,7 @@ export default function Course() {
                 <Link href="/" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce">  Home
                 {/* <Button  variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Home</Button> */}
 				</Link>
-				<Link href="/courses" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce"> Courses
+				<Link href="/courses" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce"> Jobs
 				{/* <Button variant="outlined" className="text-slate-900 font-bold font-mono text-lg hover:scale-125">Courses</Button> */}
 				</Link>
 				<Link href="/about" className="text-slate-900 font-bold font-mono text-lg hover:animate-bounce"> About
@@ -49,7 +49,7 @@ export default function Course() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search jobs..."
-        className="font-semibold right mb-4 p-2 border w-64 border-gray-300 rounded focus:outline-none text-slate-900 font-mono focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+        className="font-semibold right mb-4 p-2 border w-64 border-gray-300 rounded-lg focus:outline-none text-slate-900 font-mono focus:ring-2 focus:ring-blue-600 focus:border-transparent"
         />
       <div className="grid grid-cols-3 gap-10 h-auto mb-auto">
         {data?.filter(course => course.Title.toLowerCase().includes(searchTerm.toLowerCase())).map((course) => (
