@@ -28,9 +28,9 @@ export default function Home() {
 	function ChangeJob(job: IJob) { 
 		setCurrentJob(job);
 		setSearchTerm("");
-		if (document.getElementById("search-bar") !== null){
-			document.getElementById("search-bar").value = "";
-
+		const searchBar = document.getElementById("search-bar") as HTMLInputElement;
+		if (searchBar !== null){
+			searchBar.value = "";
 		}
 		const title = job.Title.slice(0, 15) + "...";
 		switch(job.Category){	
