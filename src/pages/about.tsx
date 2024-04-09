@@ -80,7 +80,7 @@ export default function About() {
                         rel="noopener noreferrer"
                         >
                         Powered by{' GaillardTom '}
-						<Image src="/GithubDark.svg" width={32} height={32} alt="Logo" className=" ml-2 mb-2" />
+						<Image src="/GitHubDark.svg" width={32} height={32} alt="Logo" className=" ml-2 mb-2" />
                     	</a>
                     </div>
 				
